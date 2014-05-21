@@ -24,7 +24,7 @@ module Sinatra
     module Helpers
       def authenticate
         unless session["user"]
-          session['google-auth-redirect'] = request.path
+          session['google-auth-redirect'] = request.url
           if settings.absolute_redirect?
             redirect "/auth/google_apps"
           else
